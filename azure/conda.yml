@@ -1,0 +1,10 @@
+name: hf
+channels:
+  - conda-forge
+dependencies:
+  - python=3.7
+  - pip==20.2
+  - pip:
+    - azureml-defaults
+    - tensorflow==2.*
+    - transformers
