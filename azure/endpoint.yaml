@@ -1,13 +1,14 @@
 # yaml-language-server: $schema=https://azuremlsdk2.blob.core.windows.net/latest/onlineEndpoint.schema.json
-name: gpt2-ep1
+name: gpt2
 type: online
+infrastructure: managed
 traffic:
   blue: 100
 
 deployments:
   #blue deployment
   blue:    
-    model:
+    model: 
       name: gpt2-model
       version: 1
       path: ../gpt2-model/
@@ -16,6 +17,12 @@ deployments:
         directory: scoring/
       scoring_script: score.py
     environment: 
-        name: gpt-env
-        version: 1
-        conda_file: conda.yml
+      name: gpt-env
+      version: 1
+      conda_file: file:conda.yml
+    liveness_probe:
+      period_seconds: 10
+      initial_delay_seconds: 300
+      timeout_seconds: 2
+      success_threshold: 1
+      failure_threshold: 3
