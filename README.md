@@ -12,7 +12,7 @@ b. Clone the gpt2 model from hugging face repo inside a `gpt2-model` directory i
 `git clone https://huggingface.co/gpt2`
 
 ## Step 2: Create an Endpoint simply by using executing the command
-`az ml endpoint create -n gpt2 -f azure/endpoint/yaml`
+`az ml endpoint create -n gpt2 -f azure/endpoint.yaml`
 
 That's it! All set - you have successfully deployed GPT2 model and it is ready to be scored.
 
