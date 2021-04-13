@@ -1,11 +1,11 @@
 # GPT2 on Azure ML managed Inference
 
-## Step 0: Setup CLI & Azure ML Workspace
+## Step 0: Setup CLI & Azure ML Managed Online Endpoints
 
 Please follow the instructions here for [Install](https://azure.github.io/azureml-v2-preview/_build/html/overview/installation.html) and [setup](https://azure.github.io/azureml-v2-preview/_build/html/overview/setup.html)
 
 ## Step 1: Setup project locally
-a. Clone this repo
+a. Fork this repo
 `git clone https://github.com/rsethur/gpt2.git`
 
 b. Clone the gpt2 model from hugging face repo inside a `gpt2-model` directory inside your project folder (created in above step)

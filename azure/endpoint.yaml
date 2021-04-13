@@ -16,7 +16,7 @@ deployments:
         local_path: scoring/
       scoring_script: score.py
     environment:
-      name: env-gpt
+      name: envgpt
       version: 1
       conda_file: file:conda.yml
       docker:
