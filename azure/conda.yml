@@ -6,5 +6,5 @@ dependencies:
   - pip==20.2
   - pip:
     - azureml-defaults
-    - tensorflow==2.*
+    - tensorflow==2.4.0
     - transformers
