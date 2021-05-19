@@ -1,11 +1,11 @@
 $schema: https://azuremlschemas.azureedge.net/latest/managedOnlineEndpoint.schema.json
 name: gpt2
 type: online
+auth_mode: key
 traffic:
   blue: 100
 
 deployments:
-  #blue deployment
   - name: blue  
     model:
       name: gpt2-model
@@ -20,8 +20,13 @@ deployments:
       version: 1
       conda_file: file:conda.yml
       docker:
-        image:  mcr.microsoft.com/azureml/openmpi4.1.0-cuda11.0.3-cudnn8-ubuntu18.04:20210513.v1
+        image: mcr.microsoft.com/azureml/openmpi4.1.0-cuda11.0.3-cudnn8-ubuntu18.04:20210513.v1
     instance_type: standard_nc6s_v3
+    scale_settings:
+      scale_type: manual
+      instance_count: 2
+      min_instances: 1
+      max_instances: 2
     request_settings:
       request_timeout_ms: 60000
     liveness_probe:
@@ -30,8 +35,4 @@ deployments:
       timeout: 60
       success_threshold: 1
       failure_threshold: 3
-    scale_settings:
-      scale_type: manual
-      instance_count: 1
-      min_instances: 1
-      max_instances: 1
+    
